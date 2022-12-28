@@ -1,0 +1,43 @@
+mysql :  mysql is a database 
+         database is used to store an informations of users
+         database is used to store informations in form of tables.
+         mysql is a case senstive
+
+mysqli :mysql and mysqli both are a database 
+        mysqli and mysql both is open source database 
+        mysqli is improved verson of mysql 
+
+mysql connections functions :
+
+   a) how to connect database 
+
+          $con=new mysqli("localhost","root","","dbname"); 
+          or 
+          $con=mysqli_connect("localhost","root","","dbname");
+
+    b) how to execute a query  
+          $sel="select * from tablename";
+          $exe=mysqli_query($con,$sel); 
+     
+     c) how to check database connections 
+         if($con)
+         {
+            echo "database connected";
+         }   
+         else 
+         {
+            die(mysqli_error($con));
+         }
+
+
+    d) how to fetch data from database 
+
+          $fetch=mysqli_fetch_array();
+          $fetch=mysqli_fetch_assoc();
+          $fetch=mysqli_fetch_object();
+          $num_rows=mysqli_num_rows();     
+
+
+     e) how to close database 
+           $close=mysqli_close($con);
+                
