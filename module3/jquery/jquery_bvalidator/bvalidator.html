@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/gray.css'>
+    <script src='https://code.jquery.com/jquery-3.6.2.min.js'></script>
+    <script src='js/jquery.bvalidator.min.js'></script>
+    <script src='js/default.min.js'></script>
+    <script src='js/gray.js'></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#frm").bValidator();
+        })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $("#log").click(function()
+                {
+                $(".login").fadeToggle(1000);
+            });
+        })
+    </script>
+
+    <style type="text/css">
+        .login 
+        {
+            width: 30%;
+            height: auto;
+            margin: auto;
+            background-color: lightblue;
+            padding: 20px;
+            display: none;
+            margin-top: 2%;
+            color: white;
+        }
+
+        input[type="text"]
+        {
+            width: 300px;
+            height: auto;
+            margin: auto;
+            padding: 8px;
+
+        }
+        input[type="submit"]
+        {
+            width: 300px;
+            height: auto;
+            margin: auto;
+            padding: 8px;
+            border: none;
+            background-color: red;
+            color: white;
+
+        }
+
+        #log 
+        {
+            width: 30%;
+            height: auto;
+            margin: auto;
+            padding: 8px;
+            border: none;
+            background-color: red;
+            color: white;
+            margin-left: 35%;
+
+        }
+
+        p{
+            width: 28%;
+            height: auto;
+            margin: auto;
+            margin-top: 2%;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    
+    <button type="button" id="log">Click to Login</button>
+
+    <p id="para"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, nobis! Assumenda non aliquid nisi! Eligendi delectus non debitis fuga dignissimos culpa quia, exercitationem assumenda quibusdam mollitia iste quisquam fugiat eveniet.</p>
+
+    <div class="login">
+        <form method="post" id="frm" action="welcome.html">
+        <input type="text" name="email" placeholder="Email *" data-bvalidator="required,email">
+        <br><br>
+        <input type="text" name="email" placeholder="Password *" data-bvalidator="required,minlen[4],maxlen[10]">
+        <br><br>
+        <input type="submit" name="sub" value="Login" placeholder="Email *">
+        <br><br>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+php is a server side scripting language
+php is used to create a dynamic website
+php is a open source server side scripting language 
+ ex: free download and used
+   https://www.apachefriends.org/
+
+php first time release in 1994 by rasmus landroef. 
+php in 1994 stands for personal home page 
+php stands for in 1996 php:hypertext preprocessor 
+
+        ex: examples.php 
+        <html>
+        <body>
+        <?php 
+        $name="hi i am using php";
+        echo $name; 
+        ?>   
+        </body>
+        </html  
+
+php is used to save file from .php, .phtml , .php3 etc 
+php supports all server 
+   ex: apache , tomcat , iis
+
+php is support all database 
+
+   ex: mysql , oracle, sql server , mongo db etc 
+
+php support all operating systems 
+
+   ex: windows , android , maac etc 
+
+php is a loosly type of language 
+
+    ex: $name="brijesh";
+        $a=10;
+        $b=20;
+    
+       Note : in php do not neet to identify datatype of variables thats why php is called loosly type of language
+
+what is php delemeters ? 
+
+      how to start and closed of php i.e called php delemeters 
+
+
+            ex: <?php   
+                  //statements
+                 ?>  
+                  <?=
+                   //statements
+                   ?>
+
+php used some server tools to load or run 
+      XAMMP | WAMP | LAMP
+      Note : XAMPP support OS xampp 
+
+
+
+
+
+                   
+
+        
+
+

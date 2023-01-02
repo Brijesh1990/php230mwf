@@ -1,0 +1,31 @@
+
+        #content-cont
+        {
+            width: 80%;
+            height: auto;
+            margin: auto;
+            background-color: black;
+            color: white;
+            padding: 30px;
+            margin-top: 3%;
+        }
+        #content1
+        {
+            width: 80%;
+            height: auto;
+            margin: auto;
+            background-color: red;
+            color: white;
+            padding: 30px;
+            margin-top: 3%;
+        }
+        #content2
+        {
+            width: 80%;
+            height: auto;
+            margin: auto;
+            background-color: blueviolet;
+            color: white;
+            padding: 30px;
+            margin-top: 3%;
+        }

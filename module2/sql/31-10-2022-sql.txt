@@ -1,0 +1,268 @@
+what is SQL ?
+sql stands for structured query language
+sql is a language
+sql is used to make a database and table structured 
+sql is a case insentive language 
+sql is used to create a table strucrured and used sql command or query. 
+
+
+
+types of SQL command or query ?
+
+      a)DDL (data definition language)
+      b)DML (data manupulation language)
+      a)DQL (data query language)
+      a)TCL (transactional query language)
+
+
+       a)DDL : ddl stands for data definition language its used to create database and table structured.
+
+                  ex: a) create
+                      b) alter 
+                      d) drop
+                      e) rename
+                      f) change
+                      g) truncate
+
+
+        1)how to create a database ?
+
+              syntax : create database databasename;
+                   examples:create database flipkart_db;
+
+        2)how to create a table ?
+
+        chart of creating table 
+
+
+columnname    datatype(size)          keyconstraints                          
+id            int(defaultsize(11))    primary key(auto_increments)
+name          char,varchar(0-255)     not null
+mobile        bigint(defaultsize(20))    "
+date          date 
+datetime      datetime 
+message       text
+photo         varchar(0-255),blob 
+salary        int,float
+
+
+             syntax :  
+
+             create table tablename (
+
+                columnname datatype(size) pk auto_increment,
+                .
+                .
+                .
+                columnname datatype(size)
+             );
+
+
+examples : 
+
+create table tbl_customer
+(
+customer_id int PRIMARY key AUTO_INCREMENT,
+customername varchar(155),
+firstname varchar(255),
+email varchar(255),
+password varchar(255),
+mobile bigint,
+address text,
+adharnumber bigint    
+)                            
+
+
+
+create table tbl_country
+(
+country_id int PRIMARY key AUTO_INCREMENT,
+countryname varchar(155)
+)
+
+b)alter :alter is used to add,update or modify a column after create table. 
+
+           a)alter table tbl_customer add photo varchar(255);
+           b)alter table tbl_customer add picode int;
+           c)alter table tbl_customer add lastname varchar(255) after firstname;
+           d)alter table tbl_customer change photo upload_photo varchar(255);
+
+c)change :alter table tbl_customer change photo upload_photo varchar(255);
+
+d)rename : rename is used to rename of tables 
+
+     rename table tbl_country to flip_country;
+     rename table tbl_customer to flip_customer;
+e)drop :drop is used to delete database structure and table structures and its data also.
+
+   note: after drop we never rollback data 
+
+             a) drop database databasename;
+                   drop DATABASE flipkart_db;
+             b) drop table tablename
+                   drop DATABASE flip_country; 
+       
+        
+g)truncate:truncate is used to delete or empty data from table but structure remain same.
+
+            ex:TRUNCATE table flip_country;
+
+            Note : after truncate table we never rollback data 
+
+
+       b)DML : dml stands for data manupulation language its used to manupulate data inside of tables .
+
+                  ex: a) insert
+                      b) update 
+                      c) delete 
+
+
+             a) insert data : 
+
+             insert into flip_country(countryname)values('india');
+             or
+
+             insert into flip_country(countryname)values('china'),('usa'),('uk');
+
+             or 
+             insert into flip_country values('null','srilanka'),('null','australiya'),('null','aouth africa');   
+
+
+            b)update : update flip_country set countryname='south africa' where country_id=7;
+
+             or
+
+             update flip_country set countryname='south africa' where countryname='aouth_africa';
+
+
+             c)delete : 
+
+                       a)delete from flip_country;
+                       b)delete from flip_country where country_id=1;
+                       c)delete from flip_country where countryname='srilanka';
+                       d)delete from flip_country where countryname in ('china','australiya'); 
+                       e)delete from flip_country where country_id in (2,7);
+
+              note : after delete we can rollback our data
+
+
+       c)DQL : dql stands for data query language its used to select data from  tables or fetch data from tables.
+
+                  ex: select
+
+                   a)select * from flip_country;
+                   b)select countryname from flip_country;
+                   c)select * from flip_country where country_id=1;
+                   d)select * from flip_country where countryname='india';
+                   e)select * from flip_country where countryname='india' or countryname='usa';
+
+                    f)select * from flip_country where countryname in ('india','uk','kullu');
+
+                     g)select * from flip_country where country_id BETWEEN 2 and 15;         
+                                                      
+
+                     h)select * from flip_country where country_id limit 0,15; 
+                     
+                     i)select * from flip_country where countryname like 'i%';
+
+                     j) select * from flip_country where countryname like '%a';
+
+                      k)select * from flip_country where countryname like '%a%';
+
+
+                     diference netween order by and group by :
+
+                      order by :order by is used to filter data from table in ASC or DESC order.
+
+                       select * from flip_country order by countryname;
+                       select * from flip_country order by countryname asc;
+                       select * from flip_country order by countryname desc; 
+ 
+
+                       group by : group by is used to filter or select group of columns data.
+
+                        select sum(salary),department FROM flip_employee  group by department;
+
+                        
+
+                        alias : 
+
+                           select sum(salary) as sumofsalary,department FROM flip_employee  group by department;
+                       
+
+       c)TCL : tcl stands for transactional  query language its used to save data adter delete or rollback data after delete.
+
+
+
+                  ex: a) commit
+                      b) rollback 
+                      
+
+                      commit : commit is used to  save data after delete any rows.
+
+              ex: start TRANSACTION;
+delete from flip_country where countryname='Egypt';
+commit;                      
+
+
+               rollback: 
+                start TRANSACTION;
+select * from flip_country where countryname='Egypt';
+rollback;
+
+                 Note : mysql structured not supported rollback
+
+                           
+                       
+
+        SQL key constraints :  sql key constraints are used to porovides a limit on tables.
+
+                    a) primary key (pk)
+                    b) unique key (uk)
+                    c) foriegn key key (fk)      
+
+
+                   a)primary key : A pk never return a null value.
+                                   A pk only defined once time in a table and a pk key should alway auto_increment.
+
+                                   A pk key store a unique values 
+
+
+                               contact
+           contact_id(pk)   name     gender   email   mobile       message                
+
+                     
+
+
+           SQL joins : sql joins are used to joins more than one tables if data are matched from one table to another tables.          
+
+                  types of joins :
+
+                          a) inner join
+                          b) join
+                          c) outer join
+                                   a)left join 
+                                   b)right join 
+                                   c)full join   
+                          d) cross join
+
+
+
+            SQL functions :
+                     there are two types of sql function 
+                      a) aggrigate function
+                             a)max
+                             b)min 
+                             c)avg 
+                             d)count
+                             e)sum  
+                      b) scalar function
+                             a)first 
+                             b)last 
+                             c)lcase 
+                             d)ucase 
+
+
+
+              SQL view :
+              SQL indexer :                
